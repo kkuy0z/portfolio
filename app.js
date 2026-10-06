@@ -193,7 +193,7 @@ function renderProjects() {
       <div class="project-visual tilt-card">${image ? `<img src="${safeText(image)}" alt="Imagem do projeto ${safeText(project.title)}" loading="lazy">` : ""}<span class="project-number">${String(index).padStart(2, "0")} / ${String(portfolioData.projects.length).padStart(2, "0")}</span><span class="project-open" aria-hidden="true"><span class="chrome-arrow arrow-up-right"></span></span></div>
       <div class="project-meta"><div><h3>${safeText(project.title)}</h3><p>${safeText(project.category)}</p></div><span class="project-year">${safeText(project.year)}</span></div>
     </article>`;
-  }).join("") : `<p class="empty-projects">Seus projetos autorais aparecerão aqui. Adicione um pelo editor.</p>`;
+  }).join("") : `<p class="empty-projects">Os projetos autorais aparecerão aqui.</p>`;
   document.querySelector("#project-count").textContent = String(portfolioData.projects.length).padStart(2, "0");
   document.querySelector("#editor-project-count").textContent = String(portfolioData.projects.length).padStart(2, "0");
   renderEditorProjects();
