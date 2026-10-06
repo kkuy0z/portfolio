@@ -22,14 +22,17 @@ As políticas de Row Level Security deixam a leitura do portfólio pública e li
 
 ## 2. Publicar no Netlify
 
-1. Publique a pasta do projeto pelo Netlify Drop ou conecte-a a um repositório Git.
-2. Se conectar um repositório, o `netlify.toml` publica a raiz do projeto.
-3. Em **Supabase > Authentication > URL Configuration**, configure o domínio publicado como **Site URL** e adicione também as URLs locais de desenvolvimento à lista de redirecionamento, se for usar login local.
-4. Abra o endereço público e use `Ctrl+Shift+E` (ou clique cinco vezes no monograma) para entrar com a conta que criou no Supabase. Após salvar, as mudanças são lidas por todos os visitantes.
+O código está no repositório [github.com/kkuy0z/portfolio](https://github.com/kkuy0z/portfolio), na branch `main`.
+
+1. No Netlify, escolha **Add new site > Import an existing project > GitHub** e autorize o acesso ao repositório `kkuy0z/portfolio`.
+2. Selecione a branch `main`. O `netlify.toml` configura a raiz como diretório de publicação; não é necessário comando de build.
+3. Clique em **Deploy site**. Depois, cada push na `main` publica automaticamente a versão nova.
+4. Em **Supabase > Authentication > URL Configuration**, configure o domínio publicado como **Site URL** e adicione também as URLs locais de desenvolvimento à lista de redirecionamento, se for usar login local.
+5. Abra o endereço público e use `Ctrl+Shift+E` (ou clique cinco vezes no monograma) para entrar com a conta que criou no Supabase. Alterações de conteúdo salvas serão lidas por todos os visitantes; alterações no código entram após o deploy automático.
 
 ## Segurança e armazenamento
 
 - Não habilite cadastro público no Supabase.
 - Não compartilhe sua senha nem use a chave `service_role` no front-end.
 - A foto escolhida no editor é comprimida e guardada no registro JSON do portfólio. Projetos com imagens usam URLs públicas acessíveis aos visitantes.
-- O repositório atual ainda não tem remoto Git configurado; o Netlify Drop permite a primeira publicação sem isso, mas conectar um repositório facilita atualizações futuras do código.
+- O repositório Git local já aponta para `https://github.com/kkuy0z/portfolio.git`.
